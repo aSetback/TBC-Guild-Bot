@@ -10,12 +10,6 @@ client.config = config;
 // Create an empty array of embedTitles, used for the class assignment reactions.
 client.embedTitles = [];
 
-
-// Add a listener
-client.on('raw', packet => {
-	client.reaction.rawEvent(client, packet);
-});
-
 // Add the functions from the /events folder
 fs.readdir("./functions/", (err, files) => {
   if (err) return console.error(err);
