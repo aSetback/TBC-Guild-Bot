@@ -13,10 +13,10 @@ exports.run = (client, message, args) => {
 		return false;
 	}
 
-	let category = server.channels.find(c => c.name == "Raid Signups" && c.type == "category");
+	let category = server.channels.find(c => c.name == "Raid Logistics" && c.type == "category");
 	server.createChannel(raidName, 'text')
 		.then((channel) => {
-			let signupMessage = 'placeholder';
+			let signupMessage = 'Sign-ups';
 			channel.setParent(category.id);
 			channel.send(signupMessage).then((botMsg) => {
 				botMsg.pin();

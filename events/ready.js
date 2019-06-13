@@ -1,4 +1,4 @@
 module.exports = (client, message) => {
-	console.log('VersusBot has started on ' + client.guilds.size + ' servers.'); 
-	client.user.setActivity('Versus');
+	console.log('[' + client.timestamp() + '] ' + client.config.botname + ' has started on ' + client.guilds.size + ' servers.'); 
+	client.user.setActivity(client.config.botactivity);
 };
