@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
 					message.react(main.id).then(() => {
 						setTimeout(function() {
 							message.react(alt.id);
-						}, 10000);
+						}, 60000);
 					});
 				});
 			}

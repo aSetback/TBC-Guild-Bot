@@ -67,18 +67,4 @@ fs.readdir("./commands/", (err, files) => {
   console.log('[' + client.timestamp() + '] Loaded ' + commands.length + ' commands. (' + commands.join(', ') + ')');
 });
 
-// This should run every 12 hours, and should only ping Officers on Mondays.
-setInterval(() => {
-	var dt = new Date();
-	if (dt.getDay() !== 1) {
-		console.log('Current day is: ' + dt.getDay());
-		return false;
-	}
-	
-	let guild = client.guilds.get("350833594236796928");
-	let channel = guild.channels.find(channel => channel.name === "officers");
-	channel.send('@Officer Remind Setback to decay EPGP.');
-	
-}, 12 * 60 * 60 * 1000); 
-
 client.login(config.token);
